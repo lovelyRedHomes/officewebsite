@@ -2690,6 +2690,22 @@ section {
   padding: 10px;
 }
 
+
+.intl-tel-input {
+  display: block;
+}
+.intl-tel-input .selected-flag {
+  z-index: 4;
+}
+.intl-tel-input .country-list {
+  z-index: 5;
+}
+.input-group .intl-tel-input .form-control {
+  border-top-left-radius: 4px;
+  border-top-right-radius: 0;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 0;
+}
 @media (max-width: 1024px) {
   .registrationForm {
     border: 2px solid lightgray;
