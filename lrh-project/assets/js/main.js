@@ -217,5 +217,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 var input = document.querySelector("#phone");
 window.intlTelInput(input, {
-  separateDialCode: true
+  separateDialCode: true,
+  // excludeCountries: ["in"],
+                preferredCountries: ["in" ]
 })

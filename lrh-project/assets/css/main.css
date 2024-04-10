@@ -69,6 +69,7 @@ section {
 
 .section-bg {
   background-color: #f5f6f7;
+  margin-top: 40px;
 }
 
 .section-header {
@@ -255,7 +256,8 @@ section {
   top: 0;
   left: 0;
   right: 0;
-  background-color: #F5F5F7;
+  /* background-color: color(srgb-linear 0.81 0.8 0.72); */
+  background-color: #c0c0c066;
 }
 
 .header .logo img {
@@ -2565,8 +2567,9 @@ section {
 # Footer
 --------------------------------------------------------------*/
 .footer {
-  color: #fff;
-  background: url("../img/footer-bg.jpg") top center no-repeat;
+  /* color: #fff; */
+  color: black;
+  /* background: url("../img/footer-bg.jpg") top center no-repeat; */
   background-size: cover;
   font-size: 14px;
   padding: 80px 0 60px 0;
@@ -2575,7 +2578,8 @@ section {
 
 .footer:before {
   content: "";
-  background: rgba(0, 0, 0, 0.8);
+  /* background: color(srgb-linear 0.81 0.8 0.72); */
+  background-color: #c0c0c066;
   position: absolute;
   inset: 0;
 }
@@ -2594,7 +2598,8 @@ section {
 }
 
 .footer .footer-content .footer-info h3 span {
-  color: var(--color-primary);
+  /* color: var(--color-primary); */
+  color: black;
 }
 
 .footer .footer-content .footer-info p {
@@ -2602,14 +2607,16 @@ section {
   line-height: 24px;
   margin-bottom: 0;
   font-family: var(--font-primary);
-  color: #fff;
+  /* color: #fff; */
+  color: black;
 }
 
 .footer .footer-content .social-links a {
   font-size: 18px;
   display: inline-block;
   background: rgba(255, 255, 255, 0.1);
-  color: #fff;
+  /* color: #fff; */
+  color: black;
   line-height: 1;
   margin-right: 8px;
   border-radius: 4px;
@@ -2626,7 +2633,8 @@ section {
 .footer .footer-content h4 {
   font-size: 16px;
   font-weight: 600;
-  color: #fff;
+  /* color: #fff; */
+  color: black;
   position: relative;
   padding-bottom: 12px;
 }
@@ -2650,14 +2658,16 @@ section {
 }
 
 .footer .footer-content .footer-links ul a {
-  color: rgba(255, 255, 255, 0.6);
+  /* color: rgba(255, 255, 255, 0.6); */
+  color: black;
   transition: 0.3s;
   display: inline-block;
   line-height: 1;
 }
 
 .footer .footer-content .footer-links ul a:hover {
-  color: #fff;
+  /* color: #fff; */
+  color: black;
 }
 
 .footer .footer-legal .copyright {
@@ -2672,10 +2682,13 @@ section {
 }
 
 .footer .footer-legal .credits a {
-  color: var(--color-primary);
+  /* color: var(--color-primary); */
+  color: black;
 }
+/*--------------------------------------------------------------
+/* apply dealership form 
+--------------------------------------------------------------*/
 
-/* apply dealership form */
 .lrhLogo {
   font-size: 28px;
   color: #0866ff;
@@ -2689,8 +2702,38 @@ section {
   border-radius: 10px;
   padding: 10px;
 }
+.form-header {
+  margin-bottom: 10px;
 
+}
+.header-top{
+  border: 2px solid lightgray;
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+.formHeading{font-weight: 700;}
 
+.form-text .text {
+  display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 2rem;
+    min-height: 2rem;
+    border-radius: 50px;
+    background: linear-gradient(168deg, #2096f7, #6ad9ec);
+    box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
+    margin: 0 2rem;
+    padding: 0 2rem;
+    color: #ffffff;
+    text-shadow: -6px 6px 15px rgb(173 44 44 / 50%), 6px -6px 15px rgba(255,255,255,0.8);
+    font-weight: 700;
+}
+/*--------------------------------------------------------------
+/* apply dealership form 
+--------------------------------------------------------------*/
 .intl-tel-input {
   display: block;
 }
