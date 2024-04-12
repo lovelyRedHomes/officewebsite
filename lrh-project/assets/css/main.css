@@ -580,7 +580,7 @@ section {
 }
 
 .get-started .php-email-form h3 {
-  font-size: 14px;
+  font-size: 22px;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -1871,7 +1871,7 @@ section {
 
 .hero .carousel-item::before {
   content: "";
-  background-color: rgba(0, 0, 0, 0.7);
+  /* background-color: rgba(0, 0, 0, 0.7); */
   position: absolute;
   inset: 0;
 }
