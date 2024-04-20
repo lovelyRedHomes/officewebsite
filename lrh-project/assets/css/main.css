@@ -17,22 +17,54 @@
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --font-primary: "Roboto", sans-serif;
   --font-secondary: "Work Sans", sans-serif;
- 
+  --animate-duration: 800ms;
+  --animate-delay: 0.9s;
 }
 
 /* Colors */
 :root {
   --color-default: #364d59;
-  --color-primary: #0866ff;
+  --color-primary: #cf212a;
   --color-secondary: #52565e;
- --border: #0866ff;
---background: #E3E4DB;
---text: #441151;
+  --border: #cf212a;
+  /* --background: #e3e4db; */
+  --backgroung: #cf212a;
+  --text: #441151;
 }
+
+
+
+
+/*--------------------------------------------------------------
+# Scroll Bar 
+--------------------------------------------------------------*/
 
 /* Smooth scroll behavior */
 :root {
   scroll-behavior: smooth;
+}
+
+/* Designing for scroll-bar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 20px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: gainsboro;
+  border-radius: 5px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--color-primary);
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: black;
 }
 
 /*--------------------------------------------------------------
@@ -114,6 +146,26 @@ section {
     max-width: 60%;
   }
 }
+@media (max-width: 768px) {
+  .imgeText {
+    width: 50%;
+    margin: 0px;
+    position: relative;
+    left: 10px;
+    top: 10px;
+  }
+  
+  .logo{
+    width: 100px;
+    height: 100px;
+    border: 1px solid white;
+    border-radius: 30px;
+  }
+}
+
+
+
+
 
 /*--------------------------------------------------------------
 # Breadcrumbs
@@ -254,37 +306,42 @@ section {
 # Header
 --------------------------------------------------------------*/
 .header {
-  z-index: 997;
+  /* z-index: 997; */
   /* position: absolute; */
-  padding: 30px 0;
+  padding: 10px 0;
   top: 0;
   left: 0;
   right: 0;
   /* background-color: color(srgb-linear 0.81 0.8 0.72); */
-  background-color: #c0c0c066;
+  /* background-color: #cf212a; */
+  background-color: var(--color-primary);
+
+}
+.logo {
+  width: 100px;
 }
 
-.header .logo img {
-  max-height: 40px;
-  margin-right: 6px;
+.imgeText {
+  text-transform: uppercase;
+  color: white;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  align-items: center;
+  flex-grow: 4;
 }
-
-.header .logo h1 {
-  font-size: 24px;
-  font-weight: 700;
-  color: #0d0d0d;
-  margin-bottom: 0;
-  font-family: var(--font-primary);
-}
-
-.header .logo h1 span {
-  color: var(--color-primary);
+.imgeText h2{
+ 
+  display: flex;
+  justify-content: flex-end;
 }
 
 /*--------------------------------------------------------------
 # Desktop Navigation
 --------------------------------------------------------------*/
 @media (min-width: 1280px) {
+
   .navbar {
     padding: 0;
   }
@@ -315,7 +372,7 @@ section {
     font-family: var(--font-primary);
     font-size: 14px;
     font-weight: 500;
-    color: rgba(20, 19, 19, 0.6);
+    color: rgb(255, 255, 255);
     text-transform: uppercase;
     white-space: nowrap;
     transition: 0.3s;
@@ -353,7 +410,7 @@ section {
   .navbar .active,
   .navbar .active:focus,
   .navbar li:hover > a {
-    color: #000000;
+    color: #ffc732;
   }
 
   .navbar .dropdown ul {
@@ -450,7 +507,8 @@ section {
     inset: 0;
     padding: 50px 0 10px 0;
     margin: 0;
-    background: rgba(0, 0, 0, 0.8);
+    /* background: rgba(0, 0, 0, 0.8); */
+    background: var(--backgroung);
     overflow-y: auto;
     transition: 0.3s;
     z-index: 9998;
@@ -502,7 +560,8 @@ section {
 
   .mobile-nav-show {
     position: relative;
-    color: #000000;
+    /* color: #000000; */
+    color: white;
     font-size: 28px;
     cursor: pointer;
     line-height: 0;
@@ -543,33 +602,50 @@ section {
 /*----------------------------------------------------------------------
 #hero image section
 -----------------------------------------------------------------------*/
+.hero-images {
+  border: 5px solid #cf212a;
+  border-radius: 34px;
+}
 
 .hero-section {
-  border: 2px solid lightgray;
+  /* border: 2px solid lightgray; */
   width: 70%;
   margin: 10px auto;
 }
 
 .image-hero-slider {
   width: 100%;
+  border-radius: 30px;
 }
 
 .hero-header {
-  border: 2px dotted lightgray;
   width: 70%;
   margin: 30px auto;
-  padding: 90px;
+  padding: 24px;
+  background-color: var(--color-primary);
+  border-radius: 15px;
+  color: white;
 }
+.my-element {
+  display: inline-block;
+  margin: 0 0.5rem;
+  animation: bounce; /* referring directly to the animation's @keyframe declaration */
+  animation-duration: 2s; /* don't forget to set a duration! */
+}
+
 .sparkel-text {
   box-sizing: border-box;
-  width: 30%  ;
   margin: 0 auto;
-  text-align: center;
- 
+  text-align: start;
+  padding: 27px;
+  width: 52%;
+}
+
+.sparkel-text h4{
+font-family: Poppins; 
 }
 
 .sparkle {
-  max-width: 5em;
   color: var(--text);
   margin: auto auto;
   &:hover {
@@ -578,13 +654,12 @@ section {
 }
 
 .u-hover--sparkle {
- 
   box-sizing: border-box;
   position: relative;
-  padding: 0.5em;
+  padding: 1.2em;
   &::before,
   &::after {
-    content: '';
+    content: "";
     box-sizing: border-box;
     position: absolute;
     top: 0;
@@ -597,18 +672,18 @@ section {
   &::before {
     border-top: 0.2em solid var(--border);
     border-bottom: 0.2em solid var(--border);
-    transform: scale3d(0,1,1);
+    transform: scale3d(0, 1, 1);
   }
 
   &::after {
-    border-left: 0.2em solid var(--border);
-    border-right: 0.2em solid var(--border);
-    transform: scale3d(1,0,1);
+    border-left: 0.1em solid var(--border);
+    border-right: 0.1em solid var(--border);
+    transform: scale3d(1, 0, 1);
   }
 
   &:hover::before,
   &:hover::after {
-    transform: scale3d(1,1,1);
+    transform: scale3d(1, 1, 1);
     transition: transform 900ms;
   }
 }
@@ -1249,6 +1324,11 @@ Resources
   line-height: 24px;
   font-size: 14px;
   margin-bottom: 0;
+}
+
+/* This only changes this particular animation duration */
+.animate__animated.animate__bounce {
+  --animate-duration: 2s;
 }
 
 /*--------------------------------------------------------------
@@ -2649,18 +2729,18 @@ Resources
 --------------------------------------------------------------*/
 .footer {
   /* color: #fff; */
-  color: black;
+  color: white;
   /* background: url("../img/footer-bg.jpg") top center no-repeat; */
   background-size: cover;
   font-size: 14px;
   padding: 80px 0 60px 0;
-  position: relative;
+  background-color: #CF212A;
 }
 
 .footer:before {
   content: "";
   /* background: color(srgb-linear 0.81 0.8 0.72); */
-  background-color: #c0c0c066;
+  /* background-color: #c0c0c066; */
   position: absolute;
   inset: 0;
 }
@@ -2680,7 +2760,7 @@ Resources
 
 .footer .footer-content .footer-info h3 span {
   /* color: var(--color-primary); */
-  color: black;
+  color: white;
 }
 
 .footer .footer-content .footer-info p {
@@ -2689,7 +2769,7 @@ Resources
   margin-bottom: 0;
   font-family: var(--font-primary);
   /* color: #fff; */
-  color: black;
+  color: white;
 }
 
 .footer .footer-content .social-links a {
@@ -2715,7 +2795,7 @@ Resources
   font-size: 16px;
   font-weight: 600;
   /* color: #fff; */
-  color: black;
+  color: white;
   position: relative;
   padding-bottom: 12px;
 }
@@ -2740,7 +2820,7 @@ Resources
 
 .footer .footer-content .footer-links ul a {
   /* color: rgba(255, 255, 255, 0.6); */
-  color: black;
+  color: white;
   transition: 0.3s;
   display: inline-block;
   line-height: 1;
@@ -2748,7 +2828,7 @@ Resources
 
 .footer .footer-content .footer-links ul a:hover {
   /* color: #fff; */
-  color: black;
+  color: var(--color-secondary);
 }
 
 .footer .footer-legal .copyright {
@@ -2764,7 +2844,7 @@ Resources
 
 .footer .footer-legal .credits a {
   /* color: var(--color-primary); */
-  color: black;
+  color: white;
 }
 /*--------------------------------------------------------------
 /* apply dealership form 
@@ -2805,7 +2885,7 @@ Resources
   min-width: 2rem;
   min-height: 2rem;
   border-radius: 50px;
-  background: linear-gradient(168deg, #2096f7, #6ad9ec);
+  background: linear-gradient(168deg, #b46e72, #d7363e);
   box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
   margin: 0 2rem;
   padding: 0 2rem;
